@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Video</title>
+</head>
+<body>
+    <h1>Select Resolution to Download</h1>
+    
+    <p>Video Title: {{ yt.title }}</p>
+    
+    <form method="post">
+        <select name="resolution">
+            {% for stream in streams %}
+                <option value="{{ stream.itag }}">{{ stream.resolution }} ({{ stream.mime_type }})</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Download</button>
+    </form>
+    
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
