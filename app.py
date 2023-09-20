@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # @app.route('/getVidInfo', methods=['GET', 'POST'])
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     # if request.method == 'POST':
     # video_url = request.form['video_url']
@@ -33,5 +33,5 @@ def index():
 
     return 'Downloaded successfully.'
 
-# if __name__ == '__main__':
-#     app.run(debug=False, host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
